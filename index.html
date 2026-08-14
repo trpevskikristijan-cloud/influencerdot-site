@@ -198,7 +198,7 @@
       mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
     }
     .examples-track {
-      display: flex; align-items: flex-start; gap: 22px; width: max-content;
+      display: flex; align-items: stretch; gap: 22px; width: max-content;
       animation: examples-marquee 7s linear infinite;
     }
     .examples-row:hover .examples-track { animation-play-state: paused; }
@@ -206,8 +206,9 @@
       from { transform: translateX(0); }
       to { transform: translateX(-50%); }
     }
-    .examples-row .phone { animation: none; transform: none; width: 208px; flex: 0 0 auto; }
-    .examples-row .phone-content { padding: 16px 14px 22px; }
+    .examples-row .phone { animation: none; transform: none; width: 208px; flex: 0 0 auto; display: flex; flex-direction: column; }
+    .examples-row .phone-content { padding: 16px 14px 22px; display: flex; flex-direction: column; flex: 1; }
+    .examples-row .phone-content .link-list { margin-top: auto; padding-top: 14px; }
     .examples-row .avatar-orb { width: 48px; height: 48px; margin-bottom: 10px; }
     .examples-row .name-row .pname { font-size: 15px; }
     .examples-row .link-list { margin-top: 12px; gap: 6px; }
