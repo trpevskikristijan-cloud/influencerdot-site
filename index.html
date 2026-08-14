@@ -191,12 +191,58 @@
     .examples-row {
       display: flex; justify-content: center; gap: 22px; flex-wrap: wrap; margin-top: 48px;
     }
-    .examples-row .phone { animation: none; transform: none; width: 190px; }
-    .examples-row .phone-content { padding: 16px 14px 20px; }
+    .examples-row .phone { animation: none; transform: none; width: 208px; }
+    .examples-row .phone-content { padding: 16px 14px 22px; }
     .examples-row .avatar-orb { width: 48px; height: 48px; margin-bottom: 10px; }
     .examples-row .name-row .pname { font-size: 15px; }
     .examples-row .link-list { margin-top: 12px; gap: 6px; }
     .examples-row .link-btn { padding: 8px 10px; font-size: 10.5px; }
+    .examples-row .ptag { margin-bottom: 2px; }
+
+    /* Shop grid (Priya) */
+    .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 7px; margin-top: 14px; }
+    .product-tile { position: relative; aspect-ratio: 1; border-radius: 7px; overflow: hidden; }
+    .product-tile:nth-child(1) { background: linear-gradient(135deg, #d9a877, #7c5834); }
+    .product-tile:nth-child(2) { background: linear-gradient(135deg, #EAD3C7, #a9826d); }
+    .product-tile:nth-child(3) { background: linear-gradient(135deg, #8a4b32, #3c1a12); }
+    .product-tile:nth-child(4) { background: linear-gradient(135deg, #C4955E, #5a2c1c); }
+    .product-tile .price {
+      position: absolute; bottom: 4px; right: 4px;
+      font-size: 8.5px; font-weight: 700; color: var(--champagne);
+      background: rgba(0,0,0,0.5); padding: 1px 5px; border-radius: 3px;
+    }
+
+    /* Authority / testimonial (Jordan) */
+    .stat-line { font-size: 10.5px; color: var(--gold); margin-top: 6px; font-weight: 600; }
+    .quote-card {
+      margin-top: 14px; padding: 10px 12px; text-align: left;
+      border-left: 2px solid var(--gold); background: rgba(234,211,199,0.05); border-radius: 4px;
+    }
+    .quote-card p { font-size: 10.5px; font-style: italic; color: var(--champagne-dim); line-height: 1.5; }
+    .quote-card cite { display: block; margin-top: 6px; font-size: 9px; color: var(--gold); font-style: normal; font-weight: 700; letter-spacing: 0.03em; }
+
+    /* Live stream (Noah) */
+    .live-wrap { position: relative; display: inline-block; }
+    .live-badge {
+      position: absolute; top: -3px; right: -16px; display: flex; align-items: center; gap: 3px;
+      background: #b6412c; color: #fff; font-size: 8px; font-weight: 700; letter-spacing: 0.04em;
+      padding: 2px 6px; border-radius: 10px;
+    }
+    .live-dot { width: 5px; height: 5px; border-radius: 50%; background: #fff; animation: pulse 1.4s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+    .viewer-count { font-size: 10.5px; color: var(--gold); margin-top: 4px; font-weight: 600; }
+    .stream-thumb {
+      position: relative; margin-top: 12px; border-radius: 8px; overflow: hidden; aspect-ratio: 16/10;
+      background: linear-gradient(160deg, #1a0509, #3c1a12);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .stream-thumb svg { width: 24px; height: 24px; color: var(--gold); opacity: 0.85; }
+    .stream-thumb .game-tag {
+      position: absolute; bottom: 6px; left: 6px; font-size: 8px;
+      background: rgba(0,0,0,0.55); padding: 2px 6px; border-radius: 3px; color: var(--champagne);
+    }
+    .schedule-row { display: flex; justify-content: center; gap: 5px; margin-top: 10px; }
+    .schedule-row span { font-size: 8px; color: var(--champagne-dim); border: 1px solid var(--gold-soft); border-radius: 10px; padding: 2px 7px; }
 
     /* ---------- Pricing ---------- */
     .price-card {
@@ -350,39 +396,64 @@
       </div>
 
       <div class="examples-row wrap-wide">
+
+        <!-- Priya - Beauty: shop grid layout -->
         <div class="phone">
           <div class="phone-content">
             <div class="avatar-orb"></div>
             <div class="name-row"><span class="pname">Priya</span></div>
-            <div class="ptag">Beauty</div>
+            <div class="ptag">Beauty &middot; Skincare</div>
+            <div class="product-grid">
+              <div class="product-tile"><span class="price">$32</span></div>
+              <div class="product-tile"><span class="price">$48</span></div>
+              <div class="product-tile"><span class="price">$19</span></div>
+              <div class="product-tile"><span class="price">$65</span></div>
+            </div>
             <div class="link-list">
-              <div class="link-btn solid">Shop the Look</div>
-              <div class="link-btn outline">Tutorials</div>
+              <div class="link-btn solid">Shop All Products</div>
             </div>
           </div>
         </div>
+
+        <!-- Jordan - Business coach: authority / testimonial layout -->
         <div class="phone">
           <div class="phone-content">
             <div class="avatar-orb"></div>
             <div class="name-row"><span class="pname">Jordan</span></div>
-            <div class="ptag">Business</div>
+            <div class="ptag">Business Coach</div>
+            <div class="stat-line">500+ clients coached</div>
+            <div class="quote-card">
+              <p>"Jordan helped me 3x my revenue in six months."</p>
+              <cite>&mdash; real client</cite>
+            </div>
             <div class="link-list">
-              <div class="link-btn solid">Book a Call</div>
-              <div class="link-btn outline">Newsletter</div>
+              <div class="link-btn solid">Book Free Call</div>
+              <div class="link-btn outline">Get the Playbook</div>
             </div>
           </div>
         </div>
+
+        <!-- Noah - Gaming: live stream layout -->
         <div class="phone">
           <div class="phone-content">
-            <div class="avatar-orb"></div>
+            <div class="live-wrap">
+              <div class="avatar-orb"></div>
+              <span class="live-badge"><span class="live-dot"></span>LIVE</span>
+            </div>
             <div class="name-row"><span class="pname">Noah</span></div>
-            <div class="ptag">Gaming</div>
+            <div class="ptag">Gaming &middot; Streams</div>
+            <div class="viewer-count">3.2K watching now</div>
+            <div class="stream-thumb">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              <span class="game-tag">Ranked Duos</span>
+            </div>
+            <div class="schedule-row"><span>MON</span><span>WED</span><span>FRI &middot; 7PM</span></div>
             <div class="link-list">
               <div class="link-btn solid">Watch Live</div>
-              <div class="link-btn outline">Merch</div>
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
