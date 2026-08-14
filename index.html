@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>InfluencerDot - Own Your Name</title>
-  <meta name="description" content="Get a free custom bio website on your own domain. Own your name, not a platform profile. $99/year, edited by our team whenever you need.">
+  <meta name="description" content="Get a free custom bio website on your own domain. Own your name, not a platform profile.">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://influencerdot.com/">
@@ -66,8 +66,8 @@
       display: flex; align-items: center; justify-content: space-between;
       padding: 18px 24px; max-width: 980px; margin: 0 auto;
     }
-    .logo { font-family: var(--serif); font-size: 22px; font-weight: 600; }
-    .logo .dot { color: var(--gold); }
+    .logo { display: flex; align-items: center; }
+    .logo img { height: 34px; width: auto; display: block; }
     .btn {
       display: inline-flex; align-items: center; justify-content: center; gap: 8px;
       padding: 13px 24px; border-radius: 3px;
@@ -283,19 +283,6 @@
     .schedule-row { display: flex; justify-content: center; gap: 5px; margin-top: 10px; }
     .schedule-row span { font-size: 8px; color: var(--champagne-dim); border: 1px solid var(--gold-soft); border-radius: 10px; padding: 2px 7px; }
 
-    /* ---------- Pricing ---------- */
-    .price-card {
-      max-width: 400px; margin: 40px auto 0;
-      border: 1px solid var(--gold-soft); border-radius: 10px;
-      padding: 40px 32px; text-align: center;
-      background: linear-gradient(180deg, rgba(196,149,94,0.06), transparent 60%);
-    }
-    .price-amount { font-family: var(--serif); font-size: 52px; color: var(--champagne); }
-    .price-amount span { font-size: 16px; color: var(--champagne-dim); font-family: var(--sans); }
-    .price-list { list-style: none; margin: 26px 0 30px; text-align: left; display: inline-block; }
-    .price-list li { font-size: 14px; color: var(--champagne-dim); padding: 7px 0; display: flex; gap: 10px; align-items: flex-start; }
-    .price-list svg { width: 15px; height: 15px; color: var(--gold); flex-shrink: 0; margin-top: 2px; }
-
     /* ---------- Footer ---------- */
     footer { border-top: 1px solid var(--line); padding: 40px 0; }
     .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
@@ -315,7 +302,7 @@
 
   <header class="nav">
     <div class="nav-inner">
-      <a href="#top" class="logo">iD<span class="dot">.</span></a>
+      <a href="#top" class="logo"><img src="assets/logo.png" alt="InfluencerDot"></a>
       <a href="#start" class="btn btn-gold nav-cta">Get My Free Bio</a>
     </div>
   </header>
@@ -503,31 +490,11 @@
       </div>
     </section>
 
-    <!-- PRICING -->
-    <section class="section-line" id="pricing">
-      <div class="wrap center">
-        <span class="eyebrow">Pricing</span>
-        <h2>$99 a year. Everything included.</h2>
-        <p class="lede" style="margin-top:14px;">One flat price. No design fees, no hidden costs.</p>
-
-        <div class="price-card">
-          <div class="price-amount">$99<span>/year</span></div>
-          <ul class="price-list">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 12l5 5L20 6"/></svg> Your own custom design</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 12l5 5L20 6"/></svg> Your own domain</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 12l5 5L20 6"/></svg> Unlimited edits, made by our team</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 12l5 5L20 6"/></svg> Free to start, cancel anytime</li>
-          </ul>
-          <a href="#start" class="btn btn-gold" style="width:100%;">Get My Free Bio</a>
-        </div>
-      </div>
-    </section>
-
   </main>
 
   <footer>
     <div class="wrap-wide footer-inner">
-      <a href="#top" class="logo" style="font-size:17px;">iD<span class="dot">.</span></a>
+      <a href="#top" class="logo"><img src="assets/logo.png" alt="InfluencerDot" style="height:26px;"></a>
       <div class="footer-copy">&copy; 2026 InfluencerDot. All rights reserved.</div>
     </div>
   </footer>
