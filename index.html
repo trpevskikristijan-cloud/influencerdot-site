@@ -191,17 +191,13 @@
     .value-item h3 { font-family: var(--sans); font-size: 15px; font-weight: 700; margin-bottom: 6px; }
     .value-item p { font-size: 13px; color: var(--champagne-dim); line-height: 1.5; }
 
-    /* ---------- Examples row (auto-scrolling marquee) ---------- */
-    .examples-row {
-      overflow: hidden; margin-top: 48px; width: 100%;
-      -webkit-mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
-      mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
-    }
+    /* ---------- Examples row: static grid on desktop, auto-scrolling marquee on mobile ---------- */
+    .examples-row { margin-top: 48px; width: 100%; overflow: visible; }
     .examples-track {
-      display: flex; align-items: stretch; gap: 22px; width: max-content;
-      animation: examples-marquee 7s linear infinite;
+      display: flex; align-items: stretch; justify-content: center; flex-wrap: wrap;
+      gap: 22px; width: auto; animation: none; transform: none;
     }
-    .examples-row:hover .examples-track { animation-play-state: paused; }
+    .examples-track .phone[aria-hidden="true"] { display: none; }
     @keyframes examples-marquee {
       from { transform: translateX(0); }
       to { transform: translateX(-50%); }
@@ -305,8 +301,17 @@
       section { padding: 48px 0; }
       .value-strip { grid-template-columns: 1fr; gap: 26px; }
       .phone-back { display: none; }
-      .examples-row { margin-left: -24px; margin-right: -24px; width: calc(100% + 48px); }
-      .examples-track { gap: 14px; }
+      .examples-row {
+        overflow: hidden; margin-left: -24px; margin-right: -24px; width: calc(100% + 48px);
+        -webkit-mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
+        mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
+      }
+      .examples-track {
+        flex-wrap: nowrap; justify-content: flex-start; width: max-content; gap: 14px;
+        animation: examples-marquee 7s linear infinite;
+      }
+      .examples-row:hover .examples-track { animation-play-state: paused; }
+      .examples-track .phone[aria-hidden="true"] { display: flex; }
       .examples-row .phone { width: 76vw; max-width: 260px; }
     }
   </style>
