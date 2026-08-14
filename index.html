@@ -254,6 +254,30 @@
       position: absolute; z-index: 2; width: 30px; height: 30px; border-radius: 50%;
       border: 1px solid var(--gold-soft); display: flex; align-items: center; justify-content: center;
     }
+    .stream-thumb .play-ring { width: 36px; height: 36px; border: 1.5px solid var(--gold); background: rgba(44,8,17,0.4); }
+    .stream-thumb .rec-dot {
+      position: absolute; top: 7px; left: 8px; z-index: 2;
+      width: 6px; height: 6px; border-radius: 50%; background: #e0483a;
+      animation: pulse 1.4s infinite;
+    }
+    .stream-thumb .nameplate {
+      position: absolute; top: 6px; left: 50%; transform: translateX(-50%); z-index: 2;
+      font-family: var(--serif); font-size: 9px; letter-spacing: 0.1em; font-weight: 600;
+      color: var(--gold); background: rgba(0,0,0,0.45); padding: 2px 8px; border-radius: 3px;
+    }
+    .stream-thumb .live-tag {
+      position: absolute; bottom: 6px; right: 6px; z-index: 2; display: flex; align-items: center; gap: 3px;
+      font-size: 8px; font-weight: 700; color: #fff;
+      background: rgba(0,0,0,0.5); padding: 2px 6px; border-radius: 3px;
+    }
+    .stream-thumb .live-tag .live-dot { width: 5px; height: 5px; border-radius: 50%; background: #e0483a; }
+
+    /* Noah avatar ring */
+    .live-wrap .avatar-orb { border: 2.5px solid var(--gold); box-shadow: 0 0 0 3px rgba(196,149,94,0.15), 0 6px 18px rgba(0,0,0,0.35); }
+    .live-wrap .live-badge { background: var(--gold); color: var(--burgundy); top: -6px; right: -14px; }
+    .live-wrap .live-badge .live-dot { background: var(--burgundy); }
+    .viewer-count { display: flex; align-items: center; justify-content: center; gap: 5px; }
+    .viewer-count svg { width: 12px; height: 12px; }
     .schedule-row { display: flex; justify-content: center; gap: 5px; margin-top: 10px; }
     .schedule-row span { font-size: 8px; color: var(--champagne-dim); border: 1px solid var(--gold-soft); border-radius: 10px; padding: 2px 7px; }
 
@@ -475,15 +499,38 @@
             </div>
             <div class="name-row"><span class="pname">Noah</span></div>
             <div class="ptag">Gaming &middot; Streams</div>
-            <div class="viewer-count">3.2K watching now</div>
+            <div class="viewer-count">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M2 20c0-3.5 2.7-6 6-6s6 2.5 6 6M12 20c0-3.5 2.7-6 6-6s4 1.8 4 4"/></svg>
+              3.2K watching now
+            </div>
             <div class="stream-thumb">
-              <svg class="scene" viewBox="0 0 100 62" preserveAspectRatio="none"><rect width="100" height="62" fill="#1a0509"/><rect x="22" y="14" width="56" height="30" rx="2" fill="none" stroke="#C4955E" stroke-width="1.4" opacity="0.55"/><rect x="46" y="44" width="8" height="6" fill="#3c1a12"/><rect x="38" y="50" width="24" height="3" rx="1.5" fill="#3c1a12"/></svg>
+              <svg class="scene" viewBox="0 0 100 62" preserveAspectRatio="none">
+                <rect width="100" height="62" fill="#1a0509"/>
+                <rect x="10" y="12" width="34" height="24" rx="1.5" fill="#2C0811" stroke="#C4955E" stroke-width="1" opacity="0.7"/>
+                <line x1="14" y1="17" x2="30" y2="17" stroke="#C4955E" stroke-width="0.8" opacity="0.5"/>
+                <line x1="14" y1="21" x2="26" y2="21" stroke="#C4955E" stroke-width="0.8" opacity="0.5"/>
+                <line x1="14" y1="25" x2="34" y2="25" stroke="#C4955E" stroke-width="0.8" opacity="0.5"/>
+                <line x1="14" y1="29" x2="24" y2="29" stroke="#C4955E" stroke-width="0.8" opacity="0.5"/>
+                <rect x="24" y="36" width="6" height="4" fill="#3c1a12"/>
+                <rect x="48" y="6" width="42" height="30" rx="1.5" fill="#3c1a12" stroke="#C4955E" stroke-width="1" opacity="0.85"/>
+                <path d="M48,30 L60,20 L68,26 L80,14 L90,22 L90,36 L48,36 Z" fill="#5a2c1c" opacity="0.7"/>
+                <circle cx="82" cy="13" r="3.5" fill="#C4955E" opacity="0.55"/>
+                <rect x="65" y="9" width="10" height="0" fill="none"/>
+                <rect x="66" y="38" width="6" height="4" fill="#3c1a12"/>
+                <rect x="20" y="42" width="56" height="2.5" rx="1.2" fill="#3c1a12"/>
+              </svg>
+              <span class="rec-dot"></span>
+              <span class="nameplate">NOAH</span>
               <span class="play-ring"><svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M9 6v12l9-6z"/></svg></span>
               <span class="game-tag">Ranked Duos</span>
+              <span class="live-tag"><span class="live-dot"></span>LIVE</span>
             </div>
             <div class="schedule-row"><span>MON</span><span>WED</span><span>FRI &middot; 7PM</span></div>
             <div class="link-list">
-              <div class="link-btn solid">Watch Live</div>
+              <div class="link-btn solid">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2.5"/><path d="M8.5 8.5a5 5 0 000 7M15.5 8.5a5 5 0 010 7M5.5 5.5a9 9 0 000 13M18.5 5.5a9 9 0 010 13"/></svg>
+                Watch Live
+              </div>
             </div>
           </div>
         </div>
