@@ -109,11 +109,12 @@
       padding: 14px 8px;
     }
     .handle-form input::placeholder { color: rgba(234,211,199,0.35); }
-    .handle-form button { border-radius: 0; padding: 14px 20px; }
+    .handle-form button { border-radius: 0; padding: 14px 16px; font-size: 12px; }
+    @media (max-width: 400px) { .handle-form { flex-wrap: wrap; } .handle-form .at, .handle-form input { flex: 1; } .handle-form button { flex: 0 0 100%; } }
     .cta-note { font-size: 12px; color: rgba(234,211,199,0.45); margin-top: 14px; }
 
     /* ---------- Sketch doodle ---------- */
-    .doodle { display: flex; flex-direction: column; align-items: center; gap: 2px; margin: 40px auto 8px; }
+    .doodle { display: flex; flex-direction: column; align-items: center; gap: 2px; margin: 20px auto 8px; }
     .doodle-old {
       position: relative; display: inline-block;
       font-family: 'JetBrains Mono', monospace; font-size: 14px;
@@ -124,10 +125,10 @@
     .doodle-new {
       position: relative; display: inline-block;
       font-family: 'Caveat', cursive; font-weight: 700; font-size: 32px; line-height: 1;
-      color: var(--gold); padding: 10px 20px 6px;
+      color: var(--gold); padding: 16px 30px 12px;
     }
-    .doodle-new span { position: relative; z-index: 1; }
-    .doodle-new svg { position: absolute; inset: -12px -16px; width: calc(100% + 32px); height: calc(100% + 24px); overflow: visible; }
+    .doodle-new span { position: relative; z-index: 1; white-space: nowrap; }
+    .doodle-new svg { position: absolute; inset: -18px -26px; width: calc(100% + 52px); height: calc(100% + 36px); overflow: visible; }
 
     /* ---------- Phone mockup ---------- */
     .phone-stage {
@@ -338,7 +339,7 @@
   <header class="nav">
     <div class="nav-inner">
       <a href="#top" class="logo"><img src="assets/logo.png" alt="InfluencerDot"></a>
-      <a href="#start" class="btn btn-gold nav-cta">Get My Free Bio</a>
+      <a href="#start" class="btn btn-gold nav-cta">Free Custom Link in Bio</a>
     </div>
   </header>
 
@@ -348,8 +349,8 @@
     <section class="hero">
       <div class="wrap">
         <span class="eyebrow">InfluencerDot</span>
-        <h1>Your name. Your website.<br>Not theirs.</h1>
-        <p class="lede">Stop sending your audience to a platform page. Get your own custom bio site, free to start.</p>
+        <h1>Your name. Your website.</h1>
+        <p class="lede">Stop sending your audience to a platform page.<br>Get your own custom bio site, adapted to your brand.</p>
 
         <div class="doodle">
           <span class="doodle-old">
@@ -359,16 +360,16 @@
           <svg class="doodle-arrow" viewBox="0 0 40 56" fill="none"><path d="M20,2 C6,16 34,26 17,42" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M5,33 L16,43 L27,34" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <span class="doodle-new">
             <span>yourname.com</span>
-            <svg viewBox="0 0 220 70" preserveAspectRatio="none"><path d="M16,34 C12,14 60,3 110,4 C165,2 208,13 203,35 C209,57 150,66 110,63 C58,66 10,56 16,34 Z" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg>
+            <svg viewBox="0 0 220 70" preserveAspectRatio="none"><path d="M18,36 C13,15 62,2 110,3 C167,1 210,12 204,35 C210,58 148,68 110,65 C56,68 9,57 18,36 C15,27 20,17 30,13" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg>
           </span>
         </div>
 
         <form class="handle-form" id="start" onsubmit="return false;">
           <span class="at">@</span>
-          <input type="text" placeholder="yourusername" required>
-          <button type="submit" class="btn btn-gold">Get My Free Bio</button>
+          <input type="text" placeholder="username" required>
+          <button type="submit" class="btn btn-gold">Free Custom Link in Bio</button>
         </form>
-        <p class="cta-note">Free to generate. Takes about 60 seconds.</p>
+        <p class="cta-note">Enter your username - our team will build you a free custom page and reach out to you.</p>
       </div>
 
       <div class="phone-stage wrap-wide">
