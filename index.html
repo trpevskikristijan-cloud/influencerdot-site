@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InfluencerDot - Your Own Website. Your Own Domain.</title>
+  <meta name="description" content="InfluencerDot builds custom websites for creators, built specifically for your social bio - on your own domain, not somebody else's platform page.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://influencerdot.com/">
+  <meta property="og:title" content="InfluencerDot - Your Own Website. Your Own Domain.">
+  <meta property="og:description" content="Custom websites for creators, built specifically for your social bio - on your own domain.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --burgundy:      #2C0811;
+      --burgundy-soft: #3E1420;
+      --champagne:     #EAD3C7;
+      --champagne-dim: rgba(234,211,199,0.72);
+      --gold:          #C4955E;
+      --gold-soft:     rgba(196,149,94,0.35);
+      --line:          rgba(234,211,199,0.14);
+      --serif:         'Fraunces', Georgia, serif;
+      --sans:          'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; overflow-x: clip; }
+
+    body {
+      background: var(--burgundy);
+      color: var(--champagne);
+      font-family: var(--sans);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img, svg { display: block; max-width: 100%; }
+
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .eyebrow {
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    h1, h2, h3 { font-family: var(--serif); font-weight: 500; letter-spacing: -0.01em; }
+
+    /* ---------- Nav ---------- */
+    header.nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(44,8,17,0.86);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 32px;
+      max-width: 1180px; margin: 0 auto;
+    }
+    .logo {
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--champagne);
+      letter-spacing: 0.01em;
+    }
+    .logo .dot { color: var(--gold); }
+    .nav-links {
+      display: flex; gap: 40px; align-items: center;
+      font-size: 14px; color: var(--champagne-dim);
+    }
+    .nav-links a { transition: color 0.2s; }
+    .nav-links a:hover { color: var(--champagne); }
+    .btn {
+      display: inline-block;
+      padding: 13px 28px;
+      border-radius: 2px;
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: all 0.25s;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .btn-gold { background: var(--gold); color: var(--burgundy); }
+    .btn-gold:hover { background: #d4a56e; }
+    .btn-outline { border-color: var(--gold-soft); color: var(--champagne); }
+    .btn-outline:hover { border-color: var(--gold); }
+    .nav-cta { padding: 11px 22px; font-size: 12px; }
+    .nav-toggle { display: none; background: none; border: none; color: var(--champagne); font-size: 24px; cursor: pointer; }
+
+    /* ---------- Section shell ---------- */
+    section { padding: 140px 0; position: relative; }
+    section.tight { padding: 100px 0; }
+    .section-line { border-top: 1px solid var(--line); }
+
+    .center { text-align: center; }
+    .measure { max-width: 720px; }
+    .measure.wide { max-width: 860px; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+
+    h1 { font-size: clamp(40px, 6vw, 76px); line-height: 1.05; }
+    h2 { font-size: clamp(32px, 4.4vw, 52px); line-height: 1.1; }
+    p.lede { font-size: clamp(17px, 1.6vw, 20px); color: var(--champagne-dim); line-height: 1.65; }
+    p.body-copy { font-size: 16px; color: var(--champagne-dim); line-height: 1.75; }
+
+    /* ---------- Hero ---------- */
+    .hero { padding-top: 120px; padding-bottom: 120px; text-align: center; }
+    .hero-actions { display: flex; gap: 16px; justify-content: center; margin-top: 44px; flex-wrap: wrap; }
+    .url-swap {
+      margin-top: 90px;
+      display: flex; align-items: center; justify-content: center; gap: 28px;
+      flex-wrap: wrap;
+    }
+    .url-chip {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+      padding: 14px 22px;
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      letter-spacing: 0.01em;
+    }
+    .url-chip.dim { color: rgba(234,211,199,0.4); text-decoration: line-through; text-decoration-color: rgba(234,211,199,0.25); }
+    .url-chip.gold { border-color: var(--gold-soft); color: var(--gold); font-weight: 500; }
+    .url-arrow { color: var(--gold); font-size: 20px; }
+
+    /* ---------- Problem / Alternative ---------- */
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .split.reverse .split-visual { order: 2; }
+    .split-visual { display: flex; justify-content: center; }
+
+    .browser-mock {
+      width: 100%; max-width: 420px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--burgundy-soft);
+    }
+    .browser-bar {
+      display: flex; align-items: center; gap: 8px;
+      padding: 12px 16px;
+      background: rgba(0,0,0,0.18);
+      border-bottom: 1px solid var(--line);
+    }
+    .browser-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(234,211,199,0.25); }
+    .browser-url {
+      flex: 1; margin-left: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: rgba(234,211,199,0.55);
+      background: rgba(0,0,0,0.2);
+      padding: 6px 12px;
+      border-radius: 4px;
+    }
+    .browser-url.own { color: var(--gold); }
+    .browser-body { padding: 40px 28px; min-height: 260px; display: flex; flex-direction: column; gap: 14px; }
+    .fake-line { height: 10px; border-radius: 2px; background: rgba(234,211,199,0.12); }
+    .fake-avatar { width: 56px; height: 56px; border-radius: 50%; background: rgba(234,211,199,0.14); margin-bottom: 8px; }
+    .fake-btn { height: 34px; border-radius: 4px; background: rgba(234,211,199,0.08); border: 1px solid var(--line); }
+
+    /* branded mock variant */
+    .browser-body.branded { padding: 0; background: linear-gradient(160deg, var(--burgundy) 0%, #3d1420 100%); }
+    .brand-hero { padding: 44px 28px 30px; text-align: center; }
+    .brand-hero .name { font-family: var(--serif); font-size: 26px; color: var(--champagne); margin-bottom: 6px; }
+    .brand-hero .tag { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+    .brand-cta { margin: 0 28px 16px; height: 40px; border-radius: 4px; background: var(--gold); }
+    .brand-links { display: flex; gap: 10px; padding: 0 28px 28px; }
+    .brand-links div { flex: 1; height: 30px; border-radius: 4px; border: 1px solid var(--gold-soft); }
+
+    /* ---------- Pillars ---------- */
+    .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+    .pillar { background: var(--burgundy); padding: 44px 36px; }
+    .pillar .num { font-family: var(--serif); font-size: 13px; color: var(--gold); letter-spacing: 0.1em; margin-bottom: 22px; display: block; }
+    .pillar h3 { font-size: 22px; margin-bottom: 12px; }
+    .pillar p { font-size: 14.5px; color: var(--champagne-dim); line-height: 1.65; }
+
+    /* ---------- Showcase (mockups) ---------- */
+    .showcase-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 70px; }
+    .site-card {
+      border: 1px solid var(--line); border-radius: 10px; overflow: hidden;
+      background: var(--burgundy-soft);
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .site-card:hover { transform: translateY(-6px); border-color: var(--gold-soft); }
+    .site-card-top { padding: 52px 26px 34px; text-align: center; position: relative; }
+    .site-card-top .name { font-family: var(--serif); font-size: 28px; margin-bottom: 6px; }
+    .site-card-top .niche { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+    .site-card-body { padding: 0 22px 24px; display: flex; flex-direction: column; gap: 10px; }
+    .site-pill { border: 1px solid var(--gold-soft); border-radius: 5px; padding: 10px 14px; font-size: 12px; color: var(--champagne-dim); text-align: center; }
+    .site-pill.solid { background: var(--gold); color: var(--burgundy); border-color: var(--gold); font-weight: 500; }
+
+    .card-fashion .site-card-top { background: radial-gradient(circle at 50% 0%, rgba(196,149,94,0.16), transparent 70%); }
+    .card-fitness .site-card-top { background: radial-gradient(circle at 50% 0%, rgba(234,211,199,0.10), transparent 70%); }
+    .card-travel .site-card-top { background: radial-gradient(circle at 50% 0%, rgba(196,149,94,0.10), transparent 70%); }
+
+    /* ---------- Why grid ---------- */
+    .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-top: 70px; }
+    .why-item { border-top: 1px solid var(--gold-soft); padding-top: 22px; }
+    .why-item h3 { font-size: 18px; margin-bottom: 10px; font-family: var(--sans); font-weight: 600; }
+    .why-item p { font-size: 14px; color: var(--champagne-dim); line-height: 1.6; }
+
+    /* ---------- Included list ---------- */
+    .included-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 60px; border-radius: 8px; overflow: hidden; }
+    .included-item { background: var(--burgundy); padding: 28px 24px; font-size: 14.5px; }
+    .included-item .label { font-weight: 500; color: var(--champagne); }
+
+    /* ---------- Mobile-first ---------- */
+    .phone-row { display: flex; justify-content: center; gap: 24px; margin-top: 70px; }
+    .phone {
+      width: 220px; border-radius: 28px; border: 6px solid var(--burgundy-soft);
+      background: linear-gradient(165deg, var(--burgundy) 0%, #3d1420 100%);
+      overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+    }
+    .phone:nth-child(2) { transform: translateY(-24px); }
+    .phone-notch { height: 18px; background: var(--burgundy-soft); border-radius: 0 0 12px 12px; width: 80px; margin: 0 auto; }
+    .phone-body { padding: 26px 18px; text-align: center; }
+    .phone-avatar { width: 44px; height: 44px; border-radius: 50%; background: rgba(234,211,199,0.14); margin: 0 auto 14px; }
+    .phone-body .pname { font-family: var(--serif); font-size: 17px; margin-bottom: 4px; }
+    .phone-body .ptag { font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    .phone-pill { height: 26px; border-radius: 4px; background: rgba(234,211,199,0.08); border: 1px solid var(--line); margin-bottom: 8px; }
+    .phone-pill.gold { background: var(--gold); border-color: var(--gold); }
+
+    /* ---------- Final CTA ---------- */
+    .final-cta { text-align: center; padding: 160px 0; }
+    .cta-form {
+      display: flex; gap: 12px; max-width: 460px; margin: 44px auto 0;
+      justify-content: center; flex-wrap: wrap;
+    }
+    .cta-form input {
+      flex: 1; min-width: 220px;
+      background: transparent; border: 1px solid var(--gold-soft);
+      color: var(--champagne); padding: 15px 18px; border-radius: 3px;
+      font-family: var(--sans); font-size: 14px;
+    }
+    .cta-form input::placeholder { color: rgba(234,211,199,0.4); }
+    .cta-note { font-size: 12.5px; color: rgba(234,211,199,0.45); margin-top: 16px; }
+
+    /* ---------- Footer ---------- */
+    footer { border-top: 1px solid var(--line); padding: 56px 0; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+    .footer-links { display: flex; gap: 32px; font-size: 13px; color: var(--champagne-dim); }
+    .footer-copy { font-size: 12.5px; color: rgba(234,211,199,0.4); }
+
+    /* ---------- Reveal-on-scroll ---------- */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+        position: absolute; top: 100%; left: 0; right: 0;
+        flex-direction: column; align-items: stretch; gap: 0;
+        background: var(--burgundy); border-bottom: 1px solid var(--line);
+        padding: 8px 32px 24px;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 14px 0; border-bottom: 1px solid var(--line); }
+      .nav-links .nav-cta { text-align: center; margin-top: 14px; border-bottom: none; }
+      .nav-toggle { display: block; }
+      .split { grid-template-columns: 1fr; gap: 48px; }
+      .split.reverse .split-visual { order: -1; }
+      .pillars { grid-template-columns: 1fr; }
+      .showcase-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr 1fr; }
+      .included-grid { grid-template-columns: 1fr 1fr; }
+      section { padding: 90px 0; }
+      .phone-row { display: none; }
+    }
+    @media (max-width: 520px) {
+      .why-grid { grid-template-columns: 1fr; }
+      .included-grid { grid-template-columns: 1fr; }
+      .wrap { padding: 0 22px; }
+      .url-swap { gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="#" class="logo">iD<span class="dot">.</span></a>
+      <nav class="nav-links">
+        <a href="#showcase">Work</a>
+        <a href="#why">Why It Matters</a>
+        <a href="#included">What's Included</a>
+        <a href="#start" class="btn btn-gold nav-cta">Claim Your Name</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="const l=document.querySelector('.nav-links'); const open=l.classList.toggle('open'); this.setAttribute('aria-expanded', open); this.innerHTML = open ? '&times;' : '&#9776;';">&#9776;</button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- 01 — Identity -->
+    <section class="hero">
+      <div class="wrap">
+        <span class="eyebrow center">InfluencerDot</span>
+        <h1 class="measure wide mx-auto">Your name deserves<br>its own domain.</h1>
+        <p class="lede measure mx-auto center" style="margin-top:26px;">
+          Custom websites for creators, built specifically for your social bio -
+          on your own domain, not somebody else's platform page.
+        </p>
+        <div class="hero-actions">
+          <a href="#start" class="btn btn-gold">Claim Your Name</a>
+          <a href="#showcase" class="btn btn-outline">See the Work</a>
+        </div>
+
+        <div class="url-swap reveal">
+          <span class="url-chip dim">platform.com/yourname</span>
+          <span class="url-arrow">&rarr;</span>
+          <span class="url-chip gold">yourname.com</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 — The Problem -->
+    <section class="tight section-line">
+      <div class="wrap">
+        <div class="split reveal">
+          <div>
+            <span class="eyebrow">The Problem</span>
+            <h2>You built the brand.<br>They own the page.</h2>
+            <p class="body-copy" style="margin-top:24px;">
+              You've spent years building a name people recognize - your look, your voice,
+              your audience, your reputation. Then your highest-intent visitors, the ones who
+              click through from your bio, land on a page that carries somebody else's brand.
+            </p>
+          </div>
+          <div class="split-visual">
+            <div class="browser-mock">
+              <div class="browser-bar">
+                <span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span>
+                <div class="browser-url">platform.com/yourname</div>
+              </div>
+              <div class="browser-body">
+                <div class="fake-avatar"></div>
+                <div class="fake-line" style="width:40%"></div>
+                <div class="fake-line" style="width:65%; margin-bottom:10px;"></div>
+                <div class="fake-btn"></div>
+                <div class="fake-btn"></div>
+                <div class="fake-btn"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 — The Alternative -->
+    <section class="section-line">
+      <div class="wrap">
+        <div class="split reverse reveal">
+          <div>
+            <span class="eyebrow">The Alternative</span>
+            <h2>yourname.com</h2>
+            <p class="body-copy" style="margin-top:24px;">
+              Compare <em>platform.com/sophia</em> to <em>sophia.com</em>. One says Sophia has
+              a profile here. The other says this is Sophia's place on the internet.
+              That difference is the entire idea behind InfluencerDot.
+            </p>
+          </div>
+          <div class="split-visual">
+            <div class="browser-mock">
+              <div class="browser-bar">
+                <span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span>
+                <div class="browser-url own">sophia.com</div>
+              </div>
+              <div class="browser-body branded">
+                <div class="brand-hero">
+                  <div class="name">SOFIA</div>
+                  <div class="tag">Fashion &middot; Travel &middot; Lifestyle</div>
+                </div>
+                <div class="brand-cta"></div>
+                <div class="brand-links">
+                  <div></div><div></div><div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 — What It Is -->
+    <section class="section-line">
+      <div class="wrap center">
+        <span class="eyebrow">What InfluencerDot Is</span>
+        <h2 class="measure wide mx-auto">Not a link page. A destination.</h2>
+        <p class="lede measure mx-auto center" style="margin-top:22px;">
+          InfluencerDot isn't another dashboard for organizing links. It's a fully custom
+          website, designed around you, and built specifically for the moment someone
+          arrives from your social bio.
+        </p>
+
+        <div class="pillars reveal" style="margin-top:70px;">
+          <div class="pillar">
+            <span class="num">01</span>
+            <h3>Your Own Website</h3>
+            <p>A real, owned destination - not a profile inside somebody else's ecosystem.</p>
+          </div>
+          <div class="pillar">
+            <span class="num">02</span>
+            <h3>Your Own Design</h3>
+            <p>Built around your aesthetic, your content, your audience. Never a shared template.</p>
+          </div>
+          <div class="pillar">
+            <span class="num">03</span>
+            <h3>Your Own Domain</h3>
+            <p>Your name, as the address. Memorable, credible, and yours for the long term.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 — Product Showcase -->
+    <section class="section-line" id="showcase">
+      <div class="wrap">
+        <div class="center reveal">
+          <span class="eyebrow">The Product</span>
+          <h2 class="measure wide mx-auto">See the difference.</h2>
+          <p class="lede measure mx-auto center" style="margin-top:22px;">
+            No two InfluencerDot sites look alike, because no two creators are alike.
+          </p>
+        </div>
+
+        <div class="showcase-grid reveal">
+          <div class="site-card card-fashion">
+            <div class="site-card-top">
+              <div class="name">SOFIA</div>
+              <div class="niche">Fashion &middot; Editorial</div>
+            </div>
+            <div class="site-card-body">
+              <div class="site-pill solid">Shop Sofia's Picks</div>
+              <div class="site-pill">Featured Editorial</div>
+              <div class="site-pill">Work With Me</div>
+            </div>
+          </div>
+          <div class="site-card card-fitness">
+            <div class="site-card-top">
+              <div class="name">MARCUS</div>
+              <div class="niche">Fitness &middot; Coaching</div>
+            </div>
+            <div class="site-card-body">
+              <div class="site-pill solid">Join the Program</div>
+              <div class="site-pill">Watch Latest Video</div>
+              <div class="site-pill">Book a Call</div>
+            </div>
+          </div>
+          <div class="site-card card-travel">
+            <div class="site-card-top">
+              <div class="name">ELENA</div>
+              <div class="niche">Travel &middot; Lifestyle</div>
+            </div>
+            <div class="site-card-body">
+              <div class="site-pill solid">Current Partnerships</div>
+              <div class="site-pill">Featured Trips</div>
+              <div class="site-pill">Business Inquiries</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 — Why It Matters -->
+    <section class="section-line" id="why">
+      <div class="wrap">
+        <div class="center reveal">
+          <span class="eyebrow">Why It Matters</span>
+          <h2 class="measure wide mx-auto">A page is a utility. A website is a brand.</h2>
+        </div>
+
+        <div class="why-grid reveal">
+          <div class="why-item">
+            <h3>Ownership</h3>
+            <p>Your name, your domain, your data. Not rented space inside someone else's platform.</p>
+          </div>
+          <div class="why-item">
+            <h3>Professionalism</h3>
+            <p>The first impression that tells brands and partners you're an established business.</p>
+          </div>
+          <div class="why-item">
+            <h3>Customization</h3>
+            <p>Designed around your content and audience - never a template with your name on it.</p>
+          </div>
+          <div class="why-item">
+            <h3>Conversion</h3>
+            <p>One owned destination connecting your content, products, and partnerships.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 — What's Included -->
+    <section class="section-line" id="included">
+      <div class="wrap">
+        <div class="center reveal">
+          <span class="eyebrow">What's Included</span>
+          <h2 class="measure wide mx-auto">Everything your bio link should have been doing all along.</h2>
+        </div>
+
+        <div class="included-grid reveal">
+          <div class="included-item"><span class="label">Creator Profile</span></div>
+          <div class="included-item"><span class="label">Social Links</span></div>
+          <div class="included-item"><span class="label">Custom CTAs</span></div>
+          <div class="included-item"><span class="label">Products</span></div>
+          <div class="included-item"><span class="label">Portfolio</span></div>
+          <div class="included-item"><span class="label">Featured Content</span></div>
+          <div class="included-item"><span class="label">Business Inquiries</span></div>
+          <div class="included-item"><span class="label">Contact</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 — Mobile-First -->
+    <section class="section-line">
+      <div class="wrap center">
+        <span class="eyebrow">Built for Social Traffic</span>
+        <h2 class="measure wide mx-auto">Mobile-first. Fast. Made for the tap from your bio.</h2>
+        <p class="lede measure mx-auto center" style="margin-top:22px;">
+          Almost everyone arrives from a phone, mid-scroll. Every InfluencerDot site is
+          designed for that moment first - immediate, thumb-friendly, and built to convert
+          before the scroll continues.
+        </p>
+
+        <div class="phone-row reveal">
+          <div class="phone">
+            <div class="phone-notch"></div>
+            <div class="phone-body">
+              <div class="phone-avatar"></div>
+              <div class="pname">Sofia</div>
+              <div class="ptag">Fashion</div>
+              <div class="phone-pill gold"></div>
+              <div class="phone-pill"></div>
+              <div class="phone-pill"></div>
+            </div>
+          </div>
+          <div class="phone">
+            <div class="phone-notch"></div>
+            <div class="phone-body">
+              <div class="phone-avatar"></div>
+              <div class="pname">Marcus</div>
+              <div class="ptag">Fitness</div>
+              <div class="phone-pill gold"></div>
+              <div class="phone-pill"></div>
+              <div class="phone-pill"></div>
+            </div>
+          </div>
+          <div class="phone">
+            <div class="phone-notch"></div>
+            <div class="phone-body">
+              <div class="phone-avatar"></div>
+              <div class="pname">Elena</div>
+              <div class="ptag">Travel</div>
+              <div class="phone-pill gold"></div>
+              <div class="phone-pill"></div>
+              <div class="phone-pill"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 — Final CTA -->
+    <section class="final-cta section-line" id="start">
+      <div class="wrap">
+        <span class="eyebrow center">Get Started</span>
+        <h2 class="measure wide mx-auto">Your audience already knows your name.<br>Give them somewhere worthy of it.</h2>
+
+        <form class="cta-form" onsubmit="return false;">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit" class="btn btn-gold">Claim Your Name</button>
+        </form>
+        <p class="cta-note">We'll reach out to scope your site and check domain availability.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <a href="#" class="logo" style="font-size:18px;">iD<span class="dot">.</span></a>
+      <div class="footer-links">
+        <a href="#showcase">Work</a>
+        <a href="#why">Why It Matters</a>
+        <a href="#start">Get Started</a>
+      </div>
+      <div class="footer-copy">&copy; 2026 InfluencerDot. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => io.observe(el));
+  </script>
+
+</body>
+</html>
