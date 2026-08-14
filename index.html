@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>InfluencerDot - Own Your Name</title>
-  <meta name="description" content="Get a free custom bio website on your own domain. Own your name, not a platform profile.">
+  <title>InfluencerDot - Turn Your Bio Link Into Your Own Website</title>
+  <meta name="description" content="Turn your bio link into your own website. Custom-designed, hosted on your own domain, built around your brand.">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://influencerdot.com/">
-  <meta property="og:title" content="InfluencerDot - Own Your Name">
-  <meta property="og:description" content="Get a free custom bio website on your own domain. Own your name, not a platform profile.">
+  <meta property="og:title" content="InfluencerDot - Turn Your Bio Link Into Your Own Website">
+  <meta property="og:description" content="Turn your bio link into your own website. Custom-designed, hosted on your own domain, built around your brand.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -54,6 +54,7 @@
     }
 
     h1, h2, h3 { font-family: var(--serif); font-weight: 500; letter-spacing: -0.01em; }
+    h1 .hl { color: var(--gold); font-style: italic; }
 
     /* ---------- Nav ---------- */
     header.nav {
@@ -113,22 +114,33 @@
     @media (max-width: 400px) { .handle-form { flex-wrap: wrap; } .handle-form .at, .handle-form input { flex: 1; } .handle-form button { flex: 0 0 100%; } }
     .cta-note { font-size: 12px; color: rgba(234,211,199,0.45); margin-top: 14px; }
 
-    /* ---------- Sketch doodle ---------- */
-    .doodle { display: flex; flex-direction: column; align-items: center; gap: 2px; margin: 20px auto 8px; }
-    .doodle-old {
-      position: relative; display: inline-block;
+    /* ---------- Domain transform visual ---------- */
+    .transform {
+      display: flex; align-items: center; justify-content: center;
+      gap: 18px; margin: 34px auto 10px; flex-wrap: wrap;
+    }
+    .transform-old {
       font-family: 'JetBrains Mono', monospace; font-size: 14px;
-      color: rgba(234,211,199,0.4); padding: 3px 6px;
+      color: rgba(234,211,199,0.4); padding: 8px 16px;
+      border: 1px solid var(--line); border-radius: 20px;
+      text-decoration: line-through; text-decoration-color: rgba(234,211,199,0.4); text-decoration-thickness: 1.5px;
     }
-    .doodle-old svg { position: absolute; inset: -6px -8px; width: calc(100% + 16px); height: calc(100% + 12px); overflow: visible; }
-    .doodle-arrow { width: 30px; height: 38px; margin: 2px 0; color: var(--gold); opacity: 0.85; }
-    .doodle-new {
+    .transform-arrow { width: 20px; height: 20px; color: var(--gold); opacity: 0.8; flex-shrink: 0; }
+    .transform-new {
       position: relative; display: inline-block;
-      font-family: 'Caveat', cursive; font-weight: 700; font-size: 32px; line-height: 1;
-      color: var(--gold); padding: 16px 30px 12px;
+      font-family: var(--serif); font-style: italic; font-weight: 600;
+      font-size: clamp(28px, 5vw, 40px); line-height: 1;
+      color: var(--champagne); padding: 4px 6px;
+      text-shadow: 0 0 30px rgba(196,149,94,0.45);
     }
-    .doodle-new span { position: relative; z-index: 1; white-space: nowrap; }
-    .doodle-new svg { position: absolute; inset: -18px -26px; width: calc(100% + 52px); height: calc(100% + 36px); overflow: visible; }
+    .transform-new::after {
+      content: ''; position: absolute; left: 2px; right: 2px; bottom: -8px; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    @media (max-width: 560px) {
+      .transform { gap: 10px; }
+      .transform-arrow { transform: rotate(90deg); }
+    }
 
     /* ---------- Phone mockup ---------- */
     .phone-stage {
@@ -309,6 +321,42 @@
     .schedule-row { display: flex; justify-content: center; gap: 5px; margin-top: 10px; }
     .schedule-row span { font-size: 8px; color: var(--champagne-dim); border: 1px solid var(--gold-soft); border-radius: 10px; padding: 2px 7px; }
 
+    /* ---------- Business flow ---------- */
+    .flow { display: flex; flex-direction: column; align-items: center; gap: 16px; margin-top: 56px; }
+    .flow-socials { display: flex; gap: 14px; }
+    .flow-social-icon {
+      width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--gold-soft);
+      display: flex; align-items: center; justify-content: center; color: var(--gold);
+    }
+    .flow-social-icon svg { width: 17px; height: 17px; }
+    .flow-connector { width: 18px; height: 26px; color: var(--gold); opacity: 0.6; }
+    .flow-domain {
+      font-family: var(--serif); font-style: italic; font-weight: 600;
+      font-size: clamp(22px, 4vw, 30px); color: var(--gold);
+      padding: 14px 34px; border: 1px solid var(--gold-soft); border-radius: 40px;
+      background: linear-gradient(180deg, rgba(196,149,94,0.1), transparent);
+    }
+    .flow-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 620px; }
+    .flow-tags span {
+      font-size: 12.5px; color: var(--champagne-dim);
+      border: 1px solid var(--line); border-radius: 20px; padding: 8px 16px;
+    }
+
+    /* ---------- Ownership statement ---------- */
+    .statement { text-align: center; padding: 100px 0; }
+    .statement h2 { max-width: 720px; margin: 0 auto; }
+    .statement .lede { max-width: 460px; margin: 18px auto 0; }
+    .statement-line {
+      width: 60px; height: 2px; margin: 28px auto 0;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    /* ---------- Final CTA ---------- */
+    .final-cta { text-align: center; padding: 100px 0 110px; }
+    .final-cta h2 { max-width: 640px; margin: 0 auto; }
+    .final-cta .lede { max-width: 420px; margin: 16px auto 0; }
+    .final-cta .btn { margin-top: 32px; }
+
     /* ---------- Footer ---------- */
     footer { border-top: 1px solid var(--line); padding: 40px 0; }
     .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
@@ -339,7 +387,7 @@
   <header class="nav">
     <div class="nav-inner">
       <a href="#top" class="logo"><img src="assets/logo.png" alt="InfluencerDot"></a>
-      <a href="#start" class="btn btn-gold nav-cta">Free Custom Link in Bio</a>
+      <a href="#start" class="btn btn-gold nav-cta">Get My Free Bio Website</a>
     </div>
   </header>
 
@@ -349,27 +397,21 @@
     <section class="hero">
       <div class="wrap">
         <span class="eyebrow">InfluencerDot</span>
-        <h1>Your name. Your website.</h1>
-        <p class="lede">Stop sending your audience to a platform page.<br>Get your own custom bio site, adapted to your brand.</p>
+        <h1>Turn your bio link into <span class="hl">your own website</span>.</h1>
+        <p class="lede">Stop sending your audience to someone else's platform. Get a custom-designed bio website on your own domain, built around your brand.</p>
 
-        <div class="doodle">
-          <span class="doodle-old">
-            platform.com/yourname
-            <svg viewBox="0 0 220 20" preserveAspectRatio="none"><path d="M3,9 Q45,15 90,10 T175,11 T217,8" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg>
-          </span>
-          <svg class="doodle-arrow" viewBox="0 0 40 56" fill="none"><path d="M20,2 C6,16 34,26 17,42" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M5,33 L16,43 L27,34" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span class="doodle-new">
-            <span>yourname.com</span>
-            <svg viewBox="0 0 220 70" preserveAspectRatio="none"><path d="M18,36 C13,15 62,2 110,3 C167,1 210,12 204,35 C210,58 148,68 110,65 C56,68 9,57 18,36 C15,27 20,17 30,13" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg>
-          </span>
+        <div class="transform">
+          <span class="transform-old">platform.com/yourname</span>
+          <svg class="transform-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          <span class="transform-new">yourname.com</span>
         </div>
 
         <form class="handle-form" id="start" onsubmit="return false;">
           <span class="at">@</span>
           <input type="text" placeholder="username" required>
-          <button type="submit" class="btn btn-gold">Free Custom Link in Bio</button>
+          <button type="submit" class="btn btn-gold">Get My Free Bio Website</button>
         </form>
-        <p class="cta-note">Enter your username - our team will build you a free custom page and reach out to you.</p>
+        <p class="cta-note">Enter your username and we'll create a free custom concept for your brand.</p>
       </div>
 
       <div class="phone-stage wrap-wide">
@@ -443,28 +485,30 @@
       <div class="wrap-wide">
         <div class="value-strip">
           <div class="value-item">
-            <div class="vic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></div>
-            <h3>Own it</h3>
-            <p>Your domain, not a platform profile.</p>
+            <div class="vic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 4 5.5 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.5-4-9s1.5-6.5 4-9z"/></svg></div>
+            <h3>Your domain</h3>
+            <p>yourname.com, not someone else's URL.</p>
           </div>
           <div class="value-item">
-            <div class="vic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
-            <h3>Real</h3>
-            <p>Built to look like you, never a template.</p>
+            <div class="vic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3l1.8 5.7L19.5 10.5l-5.7 1.8L12 18l-1.8-5.7L4.5 10.5l5.7-1.8L12 3z"/></svg></div>
+            <h3>Your design</h3>
+            <p>Custom-built around your brand. Never one-size-fits-all.</p>
           </div>
           <div class="value-item">
-            <div class="vic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg></div>
-            <h3>Simple</h3>
-            <p>One link, everything your audience needs.</p>
+            <div class="vic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg></div>
+            <h3>Your destination</h3>
+            <p>Content, products, collaborations and everything that matters - in one place.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- EXAMPLES -->
-    <section class="section-line">
+    <section class="section-line" id="examples">
       <div class="wrap center">
-        <h2>Crafted to fit your brand - not a single template.</h2>
+        <span class="eyebrow">The Product</span>
+        <h2>No two creators should look the same.</h2>
+        <p class="lede" style="max-width:480px; margin:14px auto 0;">Every InfluencerDot site is designed around the creator behind it - their identity, content, audience and business.</p>
       </div>
 
       <div class="examples-row">
@@ -615,6 +659,53 @@
         </div>
 
       </div>
+      </div>
+    </section>
+
+    <!-- BUSINESS VALUE FLOW -->
+    <section class="section-line">
+      <div class="wrap center">
+        <span class="eyebrow">Your Business</span>
+        <h2>More than links. Your entire creator business in one place.</h2>
+        <p class="lede" style="max-width:460px; margin:14px auto 0;">Give your audience one branded destination for the things that actually matter.</p>
+      </div>
+
+      <div class="flow">
+        <div class="flow-socials">
+          <span class="flow-social-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></span>
+          <span class="flow-social-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3a5 5 0 005 5v3a8 8 0 01-5-1.7V16a6 6 0 11-6-6h1v3.2a3 3 0 103 3V3h2z"/></svg></span>
+          <span class="flow-social-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M10 9l5 3-5 3V9z"/></svg></span>
+        </div>
+        <svg class="flow-connector" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v14M6 13l6 6 6-6"/></svg>
+        <div class="flow-domain">yourname.com</div>
+        <svg class="flow-connector" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v14M6 13l6 6 6-6"/></svg>
+        <div class="flow-tags">
+          <span>Content</span>
+          <span>Products</span>
+          <span>Affiliate Offers</span>
+          <span>Brand Inquiries</span>
+          <span>Bookings</span>
+          <span>Collaborations</span>
+          <span>Social Channels</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- OWNERSHIP STATEMENT -->
+    <section class="section-line statement">
+      <div class="wrap">
+        <h2>You built the audience. Own the destination.</h2>
+        <p class="lede">Your followers already know your name. Give them somewhere that belongs to it.</p>
+        <div class="statement-line"></div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="section-line final-cta">
+      <div class="wrap">
+        <h2>Your audience knows your name.<br>Give them somewhere worthy of it.</h2>
+        <p class="lede">Your website. Your design. Your domain. Built for your social bio.</p>
+        <a href="#start" class="btn btn-gold">Get My Free Bio Website</a>
       </div>
     </section>
 
