@@ -154,6 +154,7 @@
       position: relative; overflow: hidden;
     }
     .avatar-orb svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .avatar-orb img { width: 100%; height: 100%; object-fit: cover; }
     .name-row { display: flex; align-items: center; justify-content: center; gap: 6px; }
     .name-row .pname { font-family: var(--serif); font-size: 19px; }
     .badge { width: 15px; height: 15px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; }
@@ -250,6 +251,7 @@
       background: rgba(0,0,0,0.55); padding: 2px 6px; border-radius: 3px; color: var(--champagne);
     }
     .stream-thumb .scene, .media-thumb .scene { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.8; }
+    .stream-thumb img, .media-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .stream-thumb .play-ring, .media-thumb .play-ring {
       position: absolute; z-index: 2; width: 30px; height: 30px; border-radius: 50%;
       border: 1px solid var(--gold-soft); display: flex; align-items: center; justify-content: center;
@@ -358,18 +360,15 @@
             </div>
           </div>
           <div class="phone-content">
-            <div class="avatar-orb"><svg viewBox="0 0 64 64"><path d="M6,64 Q6,40 32,38 Q58,40 58,64 Z" fill="var(--sil)"/><ellipse cx="19" cy="35" rx="6.5" ry="17" fill="var(--sil)"/><ellipse cx="45" cy="35" rx="6.5" ry="17" fill="var(--sil)"/><ellipse cx="32" cy="23" rx="12.5" ry="13.5" fill="var(--sil)"/><path d="M44,12 Q58,22 56,44" stroke="var(--gold)" stroke-width="1.4" fill="none" opacity="0.6" stroke-linecap="round"/><circle cx="10" cy="10" r="1.8" fill="var(--gold)"/></svg></div>
+            <div class="avatar-orb"><img src="assets/sofia-avatar.jpg" alt="Sofia" loading="lazy"></div>
             <div class="name-row">
               <span class="pname">Sofia</span>
               <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg></span>
             </div>
             <div class="ptag">Fashion &middot; Travel</div>
             <div class="stat-row">182K followers &middot; 4.8M likes</div>
-            <div class="media-thumb">
-              <svg class="scene" viewBox="0 0 100 62" preserveAspectRatio="none"><rect width="100" height="62" fill="#1a0509"/><path d="M0,44 L22,26 L38,40 L58,16 L100,42 L100,62 L0,62 Z" fill="#3c1a12"/><circle cx="80" cy="14" r="7" fill="#C4955E" opacity="0.5"/></svg>
-              <span class="play-ring"><svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M9 6v12l9-6z"/></svg></span>
-              <span class="game-tag">Paris Fashion Week</span>
-              <span class="duration">2:34</span>
+            <div class="media-thumb" style="aspect-ratio:410/256;">
+              <img src="assets/sofia-video.jpg" alt="Paris Fashion Week video" loading="lazy">
             </div>
             <div class="link-list">
               <div class="link-btn solid">
@@ -439,26 +438,14 @@
         <!-- Priya - Beauty: shop grid layout -->
         <div class="phone">
           <div class="phone-content">
-            <div class="avatar-orb"><svg viewBox="0 0 64 64"><path d="M6,64 Q6,40 32,38 Q58,40 58,64 Z" fill="var(--sil)"/><circle cx="17" cy="17" r="5" fill="var(--sil)"/><circle cx="47" cy="17" r="5" fill="var(--sil)"/><circle cx="23" cy="8" r="5" fill="var(--sil)"/><circle cx="41" cy="8" r="5" fill="var(--sil)"/><circle cx="32" cy="6" r="5" fill="var(--sil)"/><ellipse cx="32" cy="24" rx="12" ry="13" fill="var(--sil)"/><path d="M44,14 Q58,22 56,44" stroke="var(--gold)" stroke-width="1.4" fill="none" opacity="0.6" stroke-linecap="round"/><circle cx="10" cy="10" r="1.8" fill="var(--gold)"/></svg></div>
+            <div class="avatar-orb"><img src="assets/priya-avatar.jpg" alt="Priya" loading="lazy"></div>
             <div class="name-row"><span class="pname">Priya</span></div>
             <div class="ptag">Beauty &middot; Skincare</div>
             <div class="product-grid">
-              <div class="product-tile">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="9" y="10" width="6" height="10" rx="2"/><path d="M10 10l1-6h2l1 6"/></svg>
-                <span class="price">$32</span>
-              </div>
-              <div class="product-tile">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 9h8l-1.5 11a1 1 0 01-1 1h-3a1 1 0 01-1-1L8 9z"/><rect x="9.5" y="4" width="5" height="5" rx="1"/><path d="M12 9v3"/></svg>
-                <span class="price">$48</span>
-              </div>
-              <div class="product-tile">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 11h4v9a2 2 0 01-2 2 2 2 0 01-2-2v-9z"/><path d="M11 11V7h2v4"/><path d="M10.5 4h3l.5 3h-4z"/></svg>
-                <span class="price">$19</span>
-              </div>
-              <div class="product-tile">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="13" r="8"/><path d="M12 13a3 3 0 100-6 3 3 0 000 6z"/><path d="M12 5V3"/></svg>
-                <span class="price">$65</span>
-              </div>
+              <div class="product-tile"><img src="assets/priya-product1.jpg" alt="Caudalie serum, $32" loading="lazy"></div>
+              <div class="product-tile"><img src="assets/priya-product2.jpg" alt="Laneige lip mask, $48" loading="lazy"></div>
+              <div class="product-tile"><img src="assets/priya-product3.jpg" alt="The Ordinary dropper, $19" loading="lazy"></div>
+              <div class="product-tile"><img src="assets/priya-product4.jpg" alt="Elemis balm, $65" loading="lazy"></div>
             </div>
             <div class="link-list">
               <div class="link-btn solid">Shop All Products</div>
@@ -469,15 +456,12 @@
         <!-- Jordan - Business coach: authority / testimonial layout -->
         <div class="phone">
           <div class="phone-content">
-            <div class="avatar-orb"><svg viewBox="0 0 64 64"><path d="M6,64 Q6,40 32,38 Q58,40 58,64 Z" fill="var(--sil)"/><ellipse cx="32" cy="23" rx="12.5" ry="13.5" fill="var(--sil)"/><path d="M27,11 L29,20" stroke="var(--gold)" stroke-width="0.9" opacity="0.5" stroke-linecap="round"/><path d="M44,12 Q58,22 56,44" stroke="var(--gold)" stroke-width="1.4" fill="none" opacity="0.6" stroke-linecap="round"/><circle cx="10" cy="10" r="1.8" fill="var(--gold)"/></svg></div>
+            <div class="avatar-orb"><img src="assets/jordan-avatar.jpg" alt="Jordan" loading="lazy"></div>
             <div class="name-row"><span class="pname">Jordan</span></div>
             <div class="ptag">Business Coach</div>
             <div class="stat-line">500+ clients coached</div>
-            <div class="media-thumb">
-              <svg class="scene" viewBox="0 0 100 62" preserveAspectRatio="none"><rect width="100" height="62" fill="#1a0509"/><path d="M14,46 L14,30 L30,30 L30,46 Z" fill="#3c1a12"/><path d="M34,46 L34,20 L50,20 L50,46 Z" fill="#3c1a12"/><path d="M54,46 L54,12 L70,12 L70,46 Z" fill="#3c1a12"/><path d="M12,30 L30,18 L52,26 L72,10" stroke="#C4955E" stroke-width="1.5" fill="none" opacity="0.8"/></svg>
-              <span class="play-ring"><svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M9 6v12l9-6z"/></svg></span>
-              <span class="game-tag">7-Figure Playbook</span>
-              <span class="duration">5:12</span>
+            <div class="media-thumb" style="aspect-ratio:374/204;">
+              <img src="assets/jordan-video.jpg" alt="7-Figure Playbook video" loading="lazy">
             </div>
             <div class="quote-card">
               <p>"Jordan helped me 3x my revenue in six months."</p>
@@ -494,7 +478,7 @@
         <div class="phone">
           <div class="phone-content">
             <div class="live-wrap">
-              <div class="avatar-orb"><svg viewBox="0 0 64 64"><path d="M6,64 Q6,40 32,38 Q58,40 58,64 Z" fill="var(--sil)"/><ellipse cx="32" cy="23" rx="12.5" ry="13.5" fill="var(--sil)"/><path d="M18,20 Q18,7 32,7 Q46,7 46,20" stroke="var(--gold)" stroke-width="2" fill="none" opacity="0.85" stroke-linecap="round"/><rect x="14.5" y="17" width="5" height="9" rx="2.5" fill="var(--gold)" opacity="0.85"/><rect x="44.5" y="17" width="5" height="9" rx="2.5" fill="var(--gold)" opacity="0.85"/><path d="M17,25 Q17,32 25,33" stroke="var(--gold)" stroke-width="1.4" fill="none" opacity="0.75" stroke-linecap="round"/></svg></div>
+              <div class="avatar-orb"><img src="assets/noah-avatar.jpg" alt="Noah" loading="lazy"></div>
               <span class="live-badge"><span class="live-dot"></span>LIVE</span>
             </div>
             <div class="name-row"><span class="pname">Noah</span></div>
@@ -503,27 +487,8 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M2 20c0-3.5 2.7-6 6-6s6 2.5 6 6M12 20c0-3.5 2.7-6 6-6s4 1.8 4 4"/></svg>
               3.2K watching now
             </div>
-            <div class="stream-thumb">
-              <svg class="scene" viewBox="0 0 100 62" preserveAspectRatio="none">
-                <rect width="100" height="62" fill="#1a0509"/>
-                <rect x="10" y="12" width="34" height="24" rx="1.5" fill="#2C0811" stroke="#C4955E" stroke-width="1" opacity="0.7"/>
-                <line x1="14" y1="17" x2="30" y2="17" stroke="#C4955E" stroke-width="0.8" opacity="0.5"/>
-                <line x1="14" y1="21" x2="26" y2="21" stroke="#C4955E" stroke-width="0.8" opacity="0.5"/>
-                <line x1="14" y1="25" x2="34" y2="25" stroke="#C4955E" stroke-width="0.8" opacity="0.5"/>
-                <line x1="14" y1="29" x2="24" y2="29" stroke="#C4955E" stroke-width="0.8" opacity="0.5"/>
-                <rect x="24" y="36" width="6" height="4" fill="#3c1a12"/>
-                <rect x="48" y="6" width="42" height="30" rx="1.5" fill="#3c1a12" stroke="#C4955E" stroke-width="1" opacity="0.85"/>
-                <path d="M48,30 L60,20 L68,26 L80,14 L90,22 L90,36 L48,36 Z" fill="#5a2c1c" opacity="0.7"/>
-                <circle cx="82" cy="13" r="3.5" fill="#C4955E" opacity="0.55"/>
-                <rect x="65" y="9" width="10" height="0" fill="none"/>
-                <rect x="66" y="38" width="6" height="4" fill="#3c1a12"/>
-                <rect x="20" y="42" width="56" height="2.5" rx="1.2" fill="#3c1a12"/>
-              </svg>
-              <span class="rec-dot"></span>
-              <span class="nameplate">NOAH</span>
-              <span class="play-ring"><svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M9 6v12l9-6z"/></svg></span>
-              <span class="game-tag">Ranked Duos</span>
-              <span class="live-tag"><span class="live-dot"></span>LIVE</span>
+            <div class="stream-thumb" style="aspect-ratio:488/340;">
+              <img src="assets/noah-stream.jpg" alt="Noah live streaming Ranked Duos" loading="lazy">
             </div>
             <div class="schedule-row"><span>MON</span><span>WED</span><span>FRI &middot; 7PM</span></div>
             <div class="link-list">
